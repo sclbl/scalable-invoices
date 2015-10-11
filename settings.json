@@ -1,0 +1,22 @@
+{
+  "public": {
+    "scalable": {
+      "module": {
+        "name": "Invoices",
+        "developer": "Scalable"
+      },
+      "core": {
+        "settings": {
+          "rootUrl": "http://127.0.0.1:3000"
+        }
+      }
+    }
+  },
+  "scalable": {
+    "core": {
+      "settings": {
+        "secretKey": "XXX"
+      }
+    }
+  }
+}
