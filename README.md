@@ -1,4 +1,4 @@
-# scalable-module-boilerplate
+# Scalable Invoices
 
 This module adds a invoice management to the Scalable system.
 
