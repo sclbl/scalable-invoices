@@ -1,0 +1,162 @@
+<template name="form">
+  <h5>Invoice</h5>
+  {{#if isInvoiceSelected}}
+    {{#with selectedInvoice}}
+      <button type="button" data-action="close" class="u-full-width button">Close</button>
+      <hr />
+      <form>
+        <div class="row">
+          <div class="six columns">
+            <div class="row">
+              <div class="twelve columns">
+                <label for="customer">Customer</label>
+                <input type="text" data-id="customer" value="{{customer}}" class="u-full-width" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="twevle columns">
+                <label for="address">Address</label>
+                <textarea style="min-height: 80px; resize: none;" id="address" class="u-full-width" data-id="address">{{address}}</textarea>
+              </div>
+            </div>
+          </div>
+          <div class="six columns">
+            <div class="row">
+              <div class="twelve columns">
+                <label for="number">Number</label>
+                <input id="number" type="text" class="u-full-width" data-id="number" value="{{number}}" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="twelve columns">
+                <label for="date">Date</label>
+                <input id="date" type="date" class="u-full-width" data-id="date" value="{{date}}" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr class="low-margin" />
+        <h5>Items</h5>
+        <div class="row">
+          <div class="seven columns">
+            <label for="description">Description</label>
+          </div>
+          <div class="two columns">
+            <label for="amount">Amount</label>
+          </div>
+          <div class="two columns">
+            <label for="price">Price</label>
+          </div>
+        </div>
+        {{#each items}}
+          <div class="item-rows" data-id="item-rows">
+            <div class="row item-row" data-id="item-row">
+              <div class="seven columns">
+                <input id="description" type="text" class="u-full-width" data-id="description" value="{{description}}" />
+              </div>
+              <div class="two columns">
+                <input id="amount" type="text" class="u-full-width" data-id="amount" value="{{amount}}" />
+              </div>
+              <div class="two columns">
+                <input id="price" type="text" class="u-full-width" data-id="price" value="{{price}}" />
+              </div>
+              <div class="one column">
+                {{#if firstItem this ../items}}
+                  <button type="button" class="u-full-width button button-primary" data-action="add-item-row"><i class="fa fa-plus fa-lg"></i></button>
+                {{else}}
+                  <button type="button" class="u-full-width button button-danger" data-action="remove-item-row"><i class="fa fa-minus fa-lg"></i></button>
+                {{/if}}
+              </div>
+            </div>
+          </div>
+        {{/each}}
+        <hr class="low-margin" />
+        <div class="row">
+          <div class="twelve columns">
+            <label for="note">Note</label>
+            <textarea class="u-full-width" data-id="note">{{note}}</textarea>
+          </div>
+        </div>
+        <div class="row">
+          <div class="twelve columns">
+            <button class="u-full-width button button-primary" data-action="add-invoice">Update Invoice</button>
+          </div>
+        </div>
+      </form>
+    {{/with}}
+  {{else}}
+    <form>
+      <div class="row">
+        <div class="six columns">
+          <div class="row">
+            <div class="twelve columns">
+              <label for="customer">Customer</label>
+              <input type="text" data-id="customer" class="u-full-width" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="twevle columns">
+              <label for="address">Address</label>
+              <textarea style="min-height: 80px; resize: none;" id="address" class="u-full-width" data-id="address"></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="six columns">
+          <div class="row">
+            <div class="twelve columns">
+              <label for="number">Number</label>
+              <input id="number" type="text" class="u-full-width" data-id="number" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="twelve columns">
+              <label for="date">Date</label>
+              <input id="date" type="date" class="u-full-width" data-id="date" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr class="low-margin" />
+      <h5>Items</h5>
+      <div class="row">
+        <div class="seven columns">
+          <label for="description">Description</label>
+        </div>
+        <div class="two columns">
+          <label for="amount">Amount</label>
+        </div>
+        <div class="two columns">
+          <label for="price">Price</label>
+        </div>
+      </div>
+      <div class="item-rows" data-id="item-rows">
+        <div class="row item-row" data-id="item-row">
+          <div class="seven columns">
+            <input id="description" type="text" class="u-full-width" data-id="description" />
+          </div>
+          <div class="two columns">
+            <input id="amount" type="text" class="u-full-width" data-id="amount" />
+          </div>
+          <div class="two columns">
+            <input id="price" type="text" class="u-full-width" data-id="price" />
+          </div>
+          <div class="one column">
+            <button type="button" class="u-full-width button button-primary" data-action="add-item-row"><i class="fa fa-plus fa-lg"></i></button>
+          </div>
+        </div>
+      </div>
+      <hr class="low-margin" />
+      <div class="row">
+        <div class="twelve columns">
+          <label for="note">Note</label>
+          <textarea class="u-full-width" data-id="note"></textarea>
+        </div>
+      </div>
+      <div class="row">
+        <div class="twelve columns">
+          <button class="u-full-width button button-primary" data-action="add-invoice">Add Invoice</button>
+        </div>
+      </div>
+    </form>
+  {{/if}}
+</template>

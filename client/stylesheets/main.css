@@ -9,6 +9,32 @@ body{
   margin-left: 10px;
 }
 
+input[type=date]{
+  height: 38px;
+  padding: 6px 10px;
+  background-color: #fff;
+  border: 1px solid #D1D1D1;
+  border-radius: 4px;
+  box-shadow: none;
+  box-sizing: border-box;
+}
+
+button.button-primary, button.button-danger{
+  padding: 0;
+}
+
+button.button-danger{
+  background-color: red;
+  border: 0;
+  color: white;
+}
+
+button.button-danger:hover{
+  background-color: darkred;
+  color: white;
+  border: 0;
+}
+
 .fa-lg {
   vertical-align: 0;
 }

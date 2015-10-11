@@ -1,0 +1,17 @@
+<template name="invoices">
+  <input type="text" class="u-full-width" placeholder="Search..." data-action="search"/>
+  <hr />
+  {{#if invoices.count}}
+    <ul>
+      {{#each invoices}}
+        <li>
+          <button class="no-button" data-action="open">{{customer}}</button><button class="no-button" data-action="remove"><i class="fa fa-trash-o fa-lg"></i></button>
+        </li>
+      {{/each}}
+    </ul>
+  {{else}}
+    <div class="text-center">
+      No invoices found...
+    </div>
+  {{/if}}
+</template>
